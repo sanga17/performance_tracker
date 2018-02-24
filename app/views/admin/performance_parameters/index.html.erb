@@ -1,0 +1,13 @@
+<h1>All Performance Parameter</h1>
+<ul>
+  <% @performance_parameters.each do |parameter| %>
+    <li>
+      <%= link_to parameter.name, admin_performance_parameter_path(parameter) %>
+    </li>
+    <!-- <li><%= link_to "Edit Performance parameter",
+    edit_admin_performance_parameter_path(parameter) %></li> -->
+    <li><%= link_to "Delete Performance parameter",
+    admin_performance_parameter_path(parameter),
+    method: :delete,data: { confirm: "You sure?" }%></li>
+  <% end %>
+</ul>

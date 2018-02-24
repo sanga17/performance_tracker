@@ -1,0 +1,10 @@
+<h1>Edit Performance Parameter</h1>
+<%= form_for([:admin,@performance_parameter]) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :active %>
+  <%= f.check_box :active, class: 'form-control' %>
+
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

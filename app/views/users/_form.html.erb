@@ -1,0 +1,18 @@
+  <%= form_for(@user) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :mobile_no %>
+      <%= f.text_field :mobile_no %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :role %>
+      <%= f.text_field :role %>
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>

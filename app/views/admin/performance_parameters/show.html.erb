@@ -1,0 +1,7 @@
+<ul type="none" >
+  <li><%= @performance_parameter.name %></li>
+  <li><%= @performance_parameter.active%></li>
+</ul>
+ <%= link_to "Edit Performance parameter",
+ edit_admin_performance_parameter_path(@performance_parameter) %>
+ <%= link_to "All Performance parameters", admin_performance_parameters_path %>
