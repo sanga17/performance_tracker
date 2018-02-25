@@ -41,9 +41,26 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def _performance_parameter
+    @user = User.find(params[:id])
+    @performance_parameters = PerformanceParameter.all
+    @user_performance_parameters = @user.performance_parameters
+  end
+
+  def search
+    @user = User.find(params[:id])
+    @user_performance_parameters = @user.performance_parameters
+    @performance_parameters = PerformanceParameter.find(params[:performance_parameter_ids])
+    @performance_parameters.each do |performance_parameter|
+      UserPerformanceParameter.find_or_create_by(user_id: @user.id, performance_parameter_id: performance_parameter.id)
+    end
+    redirect_to _performance_parameter_user_path(@user)
+  end
 
   private
-    def user_params
-      params.require(:user).permit(:name, :email, :mobile_no, :password, :role)
-    end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :mobile_no, :password, :role)
+  end
+
 end

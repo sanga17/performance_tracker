@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   end
 
   root 'application#hello'
+  resources :users do
+    member do
+      get '_performance_parameter'
+      match '/users', to: 'users#search',via: 'get'
+    end
+  end
 
-  resources :users
 end

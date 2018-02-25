@@ -1,0 +1,13 @@
+<h1>Performance parameters</h1>
+<%= form_tag({controller: "users", action: "search"}, method: "get") do %>
+  <%= label_tag(@user.name) %>
+  <ul style="display: inline-block; list-style-type: none;">
+    <% @performance_parameters.each do |performance_parameter| %>
+      <li>
+        <%=check_box_tag 'performance_parameter_ids[]', performance_parameter.id -%>
+        <%=performance_parameter.name%>
+      </li>
+    <% end %>
+  </ul>
+  <%= submit_tag("Search") %>
+<% end %>
