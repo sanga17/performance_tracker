@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get '_performance_parameter'
-      match '/users', to: 'users#search',via: 'get'
+      match '/users', to: 'users#update_user_performance_parameter',via: 'get'
     end
   end
 

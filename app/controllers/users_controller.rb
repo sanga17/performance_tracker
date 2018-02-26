@@ -47,12 +47,12 @@ class UsersController < ApplicationController
     @user_performance_parameters = @user.performance_parameters
   end
 
-  def search
+  def update_user_performance_parameter
     @user = User.find(params[:id])
-    @user_performance_parameters = @user.performance_parameters
     @performance_parameters = PerformanceParameter.find(params[:performance_parameter_ids])
     @performance_parameters.each do |performance_parameter|
-      UserPerformanceParameter.find_or_create_by(user_id: @user.id, performance_parameter_id: performance_parameter.id)
+      UserPerformanceParameter.find_or_create_by(user_id: @user.id,
+      performance_parameter_id: performance_parameter.id)
     end
     redirect_to _performance_parameter_user_path(@user)
   end
