@@ -41,10 +41,10 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-  def _performance_parameter
+  def user_performance_parameter
     @user = User.find(params[:id])
     @performance_parameters = PerformanceParameter.all
-    @user_performance_parameters = @user.performance_parameters
+    @user_user_performance_parameters = @user.performance_parameters
   end
 
   def update_user_performance_parameter
@@ -54,7 +54,11 @@ class UsersController < ApplicationController
       UserPerformanceParameter.find_or_create_by(user_id: @user.id,
       performance_parameter_id: performance_parameter.id)
     end
-    redirect_to _performance_parameter_user_path(@user)
+    redirect_to user_performance_parameter_user_path(@user)
+  end
+
+  def user_task
+
   end
 
   private

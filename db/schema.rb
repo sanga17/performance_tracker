@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180225125137) do
+ActiveRecord::Schema.define(version: 20180226104118) do
 
   create_table "performance_parameters", force: :cascade do |t|
     t.string "name"
     t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.text "description"
+    t.integer "user_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "completed_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
