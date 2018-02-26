@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PerformanceTracker</title>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <%= stylesheet_link_tag 'admin/admin', media: 'all' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <%= javascript_include_tag 'admin/admin' %>
+  </head>
+  <body>
+    <div class="header">
+      PERFORMANCE TRACKER
+    </div>
+    <center>
+    <h2>Welcome Admin</h2>
+    </center>
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-3">
+            <a href="/user_roles">Employees</a><br>
+            <a href="/performance_parameter">Performance Parameter</a><br>
+          </div>
+          <div class="col-sm-9">
+            <%= yield %>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

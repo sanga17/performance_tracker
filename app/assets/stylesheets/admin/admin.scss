@@ -1,3 +1,6 @@
+/*// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,22 +13,23 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-  *= require bootstrap_and_customization
-  *= require bootstrap-datetimepicker
+ *= require admin/employee
  */
+
 .container-fluid a {
   text-decoration-color: grey;
   border-style: solid 1;
 }
-.sidebar {
-  padding-top: 5px;
-  padding-left: 5px;
+.sidebar1 {
   height: 600px;
   width: 20%;
   background-color: #e67e22;
 }
-.header {
-  height: 50px;
-  width: 100%;
-  padding-top: 10px;
-}
+/*
+.sidebar {
+  padding-top: 5px;
+  padding-left: 5px;
+  height: 620px;
+  width: 20%;
+  background-color: #e67e22;
+}*/

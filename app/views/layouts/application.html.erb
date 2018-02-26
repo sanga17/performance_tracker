@@ -7,8 +7,23 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class="header">
+      PERFORMANCE TRACKER
+    </div>
+    <center>
+    <h2>Welcome User</h2>
+    </center>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3">
+          <a href="/user_roles">Employees</a><br>
+          <a href="/performance_parameter">Performance Parameter</a><br>
+        </div>
+        <div class="col-sm-9">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

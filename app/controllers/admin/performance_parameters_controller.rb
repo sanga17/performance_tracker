@@ -1,4 +1,4 @@
-class Admin::PerformanceParametersController < ApplicationController
+class Admin::PerformanceParametersController < AdminController
   def show
     @performance_parameter = PerformanceParameter.find(params[:id])
   end
